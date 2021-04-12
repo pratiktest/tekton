@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: welcome
+spec:
+  params:
+    - name: person
+      type: string
+  steps:
+    - name: greetings
+      image: registry.access.redhat.com/ubi8/ubi
+      script: |
+        #!/usr/bin/env bash
+        echo "Welcome"
